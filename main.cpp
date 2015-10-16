@@ -1,6 +1,9 @@
 #include <iostream>
 #include <conio.h>
 #include <sstream>
+#include <map>
+
+std::map<int,std::string> decistring;
 
 std::string toString(int i)
 {
@@ -58,7 +61,7 @@ int main(int argc, char **argv)
     ss<<argv[1]<<" "<<argv[2];
     int deci,base;
     ss>>deci>>base;
-    if (base<2 || base>16 || deci<=0)
+    if (base<2 || base>16 || deci<0 || deci>256)
         return abnormalExit(argv[0]);
     std::cout<<"Decimal number is "<<deci<<std::endl;
     std::cout<<"To Be converted to base "<<base<<std::endl;
